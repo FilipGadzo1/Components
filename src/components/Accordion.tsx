@@ -11,7 +11,7 @@ AccordionProps): ReactElement => {
 
 
   return (
-    <div>
+    <div className="text-blue-500">
       HI
     </div>
   );
