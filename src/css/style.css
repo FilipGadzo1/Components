@@ -6,6 +6,19 @@
     border-bottom: 2px solid black;
 }
 
+.border-2:focus{
+    outline: 1px solid;
+    border-color: blue, blue, blue, 0;
+}
+
 .border-left{
     border-left: gray;
+}
+
+.size{
+    width: 3%;
+    height: 3%;
+    margin-left: 590px;
+    margin-top: 10px;
+    margin-bottom: -30px;
 }
