@@ -13,5 +13,6 @@ export const Accordion: Story<AccordionProps> = (args: AccordionProps) => (
 );
 
 Accordion.args = {
-  title: "Fundamentals",
+  subtitle: "1. COURSE",
+  title: "Fundamentals"
 };

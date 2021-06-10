@@ -1,0 +1,11 @@
+.border-2{
+    border-left: 8px solid rgb(9, 153, 179);
+}
+
+.border-2:hover{
+    border-bottom: 2px solid black;
+}
+
+.show{
+    visibility: visible;
+  }
