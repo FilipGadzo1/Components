@@ -6,6 +6,6 @@
     border-bottom: 2px solid black;
 }
 
-.show{
-    visibility: visible;
-  }
+.border-left{
+    border-left: gray;
+}
