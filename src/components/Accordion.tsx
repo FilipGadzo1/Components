@@ -6,45 +6,40 @@ import arrowDown from '../images/down-arrow.png';
 export interface AccordionProps {
   subtitle: string;
   title: string;
+  content: string;
+  isOpened: boolean
 }
 
 export const Accordion: React.FC<AccordionProps> = ({
   title,
-  subtitle
+  subtitle,
+  content,
+  isOpened
 }: AccordionProps): ReactElement => {
-  const initialStyling = "pb-6 pr-20";
-  const content = 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum dolore facere recusandae magni voluptatem dolorem,'
-  + 'eligendi aperiam eum, quis debitis explicabo incidunt minima cumque velit unde blanditiis quasi iusto doloremque.';
-  const [text, setText] = useState(false);
-  const [colorChange, setColorChange] = useState(false);
-  const [arrow, setArrow] = useState(false);
 
-function showContent(event: any){
-    setText(true);
-    setColorChange(true);
-    setArrow(true);
-}
+  const [show, setShow] = useState(isOpened)
+ 
 
   const border = [
     "border-2",
     "border-black-100",
     "pl-8",
-    "w-2/5",
+    "w-full",
     "focus:ring-blue-600",
     "pointer-events-auto",
   ]
 
   return (
-    <div className={border.join(" ")} onClick={showContent} style={{borderLeftColor: colorChange ? 'rgb(179, 188, 190)' : 'rgb(9, 153, 179)'}}>
+    <div className={border.join(" ")} onClick={() => setShow(!show)} style={{borderLeftColor: show ? 'rgb(179, 188, 190)' : 'rgb(9, 153, 179)'}}> {/* ternary operator */}
       <img src={arrowDown} alt="arrow up/down" className="size" onClick={() => {arrowUp}}/>
-      <div className="text-1xl pt-4" style={{color: colorChange ? 'rgb(9, 153, 179)' : 'black'}}>
+      <div className="text-1xl pt-4" style={{color: show ? 'rgb(9, 153, 179)' : 'black'}}>
         {subtitle}
       </div>
       <div className="text-3xl pb-2 font-semibold">
         {title}
       </div>
-      <div className={initialStyling}>
-        <p>{text ? content : null}</p>
+      <div className={`pb-6 pr-20 ${show ? "" : "hidden"}`} >
+        <p>{content}</p>
       </div>
     </div>
   );
